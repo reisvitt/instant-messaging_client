@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ChatController">
+   <center>
+      <ListView fx:id="listMessages" prefHeight="597.0" prefWidth="450.0" style="-fx-border-color: transparent; -fx-border-width: 0;" styleClass="main" stylesheets="@css/chat.css" BorderPane.alignment="CENTER" />
+   </center>
+   <top>
+      <HBox prefHeight="60.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <StackPane prefHeight="60.0" prefWidth="60.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#handleGoBack" style="-fx-background-color: transparent;">
+                     <graphic>
+                        <ImageView accessibleText="Voltar" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/left.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </StackPane>
+            <AnchorPane prefHeight="60.0" prefWidth="326.0">
+               <children>
+                  <Label fx:id="groupName" text="Label" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <StackPane prefHeight="60.0" prefWidth="60.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#handleLeaveGroup" style="-fx-background-color: transparent;">
+                     <graphic>
+                        <ImageView accessibleText="Sair do grupo" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/exit.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </StackPane>
+         </children>
+      </HBox>
+   </top>
+   <bottom>
+      <AnchorPane prefHeight="60.0" prefWidth="450.0" style="-fx-background-color: transparent; -fx-border-width: 0; -fx-border-color: transparent;" BorderPane.alignment="CENTER">
+         <children>
+            <TextField fx:id="inputText" layoutX="33.0" layoutY="17.0" onAction="#handleSend" prefHeight="40.0" prefWidth="365.0" style="-fx-border-radius: 20; -fx-background-radius: 20; -fx-border-color: #ccc; -fx-background-color: #FFF;" AnchorPane.bottomAnchor="16.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="69.0" AnchorPane.topAnchor="16.0" />
+            <Button alignment="CENTER" layoutX="376.0" layoutY="17.0" maxHeight="40.0" maxWidth="40.0" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#handleSend" prefHeight="40.0" prefWidth="40.0" style="-fx-border-radius: 50%; -fx-background-color: #1bb600; -fx-background-radius: 50%;" AnchorPane.bottomAnchor="16.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="16.0">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/send.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </AnchorPane>
+   </bottom>
+</BorderPane>

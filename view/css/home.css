@@ -1,0 +1,44 @@
+
+.main {
+  -fx-alignment: top_center;
+}
+
+.main > HBox {
+  -fx-pref-height: 80;
+  -fx-alignment: center;
+  -fx-spacing: 10;
+  -fx-padding: 16 12 16 12;
+  -fx-cursor: hand;
+  -fx-transition: opacity 1s;
+  -fx-border-width: 1 0 1 0;
+  -fx-border-color: transparent;
+}
+
+.main > HBox > VBox {
+  -fx-alignment: center_left;
+}
+
+.main .title {
+  -fx-font-size: 18;
+  -fx-font-weight: bold;
+}
+
+.main .last-message {
+  -fx-font-size: 12;
+  -fx-text-fill: #222;
+}
+
+.main .last-message-box {
+  -fx-spacing: 3;
+  -fx-alignment: center_right;
+  -fx-min-width: 70;
+}
+
+.main .last-message-time {
+  -fx-text-fill: #222;
+}
+
+.main > HBox .last-message-time.active {
+  -fx-text-fill: #005c4b;
+  -fx-font-weight: bold;
+}

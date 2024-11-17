@@ -1,0 +1,54 @@
+
+.my-message {
+  -fx-alignment: center_right;
+  -fx-border-radius: 8;
+}
+
+.main .my-message VBox {
+  -fx-background-radius: 10;
+  -fx-background-color: #005c4b;
+  -fx-alignment: center_left;
+  -fx-padding: 8;
+}
+
+.message-time {
+  -fx-font-size: 10;
+  -fx-min-width: 28;
+}
+
+.message-text-box {
+  -fx-alignment: bottom_left;
+  -fx-spacing: 8;
+}
+
+.main .message-box {
+  -fx-background-radius: 8;
+  -fx-alignment: center_left;
+}
+
+.main .message-box VBox {
+  -fx-background-radius: 10;
+  -fx-background-color: #ccc;
+  -fx-alignment: center_left;
+  -fx-padding: 8;
+}
+
+.main .my-message Label {
+  -fx-text-fill: #FFF;
+}
+
+.message-box Label {
+  -fx-text-fill: #101010;
+}
+
+.message-user-name {
+  -fx-cursor: hand;
+  -fx-font-weight: bold;
+}
+
+.main HBox VBox {
+  -fx-wrap-text: true;
+  -fx-max-width: 300;
+  -fx-min-height: 30;
+}
+
