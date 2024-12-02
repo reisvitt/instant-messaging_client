@@ -1,7 +1,16 @@
 
+/* ***************************************************************
+* Autor............: Vitor Reis
+* Matricula........: 201710793
+* Inicio...........: 10/08/2024
+* Ultima alteracao.: 01/12/2024
+* Nome.............: MSN
+* Funcao...........: Aplicação de chat de mensagens utilizando os protocolos UDP e TCP
+*************************************************************** */
 import controller.ChatController;
 import controller.HomeController;
 import controller.NewGroupController;
+import controller.SelectionController;
 import controller.SplashController;
 import data.StageSingleton;
 import javafx.application.Application;
@@ -16,6 +25,7 @@ public class Principal extends Application {
   HomeController homeController = new HomeController();
   NewGroupController newGroupController = new NewGroupController();
   SplashController splashController = new SplashController();
+  SelectionController selectionController = new SelectionController();
 
   @Override
   public void start(Stage stage) throws Exception {

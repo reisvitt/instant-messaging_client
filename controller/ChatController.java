@@ -1,3 +1,12 @@
+/* ***************************************************************
+* Autor............: Vitor Reis
+* Matricula........: 201710793
+* Inicio...........: 10/08/2024
+* Ultima alteracao.: 01/12/2024
+* Nome.............: ChatController
+* Funcao...........: Controla a tela de Chat/Grupo
+*************************************************************** */
+
 package controller;
 
 import java.net.URL;
@@ -35,6 +44,13 @@ public class ChatController implements Initializable {
   private Chat chat;
   StageSingleton stageSingleton;
 
+  /*
+   * ***************************************************************
+   * Metodo: handleGoBack
+   * Funcao: Retorna a listagem de Chats / Grupos / Tela Principal
+   * Parametros: evento do botao
+   * Retorno: void
+   */
   @FXML
   private void handleGoBack(ActionEvent event) {
     main.setSelectedChat(null);
@@ -43,6 +59,13 @@ public class ChatController implements Initializable {
     stageSingleton.goHomeScreen();
   }
 
+  /*
+   * ***************************************************************
+   * Metodo: handleLeaveGroup
+   * Funcao: Sai do grupo e retorna a listagem de Chats / Grupos / Tela Principal
+   * Parametros: evento do botao
+   * Retorno: void
+   */
   @FXML
   private void handleLeaveGroup(ActionEvent event) {
     try {
@@ -54,6 +77,13 @@ public class ChatController implements Initializable {
     }
   }
 
+  /*
+   * ***************************************************************
+   * Metodo: handleSend
+   * Funcao: Envia mensagem neste grupo
+   * Parametros: evento do botao
+   * Retorno: void
+   */
   @FXML
   private void handleSend(ActionEvent event) {
     String data = this.inputText.getText();
@@ -74,6 +104,13 @@ public class ChatController implements Initializable {
     }
   }
 
+  /*
+   * ***************************************************************
+   * Metodo: renderChat
+   * Funcao: Renderiza as mensagens do Chat
+   * Parametros: void
+   * Retorno: void
+   */
   public void renderChat() {
 
     this.listMessages.setItems(chat.getMessages());
@@ -103,6 +140,13 @@ public class ChatController implements Initializable {
     });
   }
 
+  /*
+   * ***************************************************************
+   * Metodo: createMessage
+   * Funcao: Cria a renderização de uma mensagem
+   * Parametros: Mensagem a ser renderizada
+   * Retorno: Hbox
+   */
   private HBox createMessage(Message message) {
     HBox parent = new HBox();
     VBox vbox = new VBox();

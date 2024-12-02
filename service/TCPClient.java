@@ -1,3 +1,12 @@
+/* ***************************************************************
+* Autor............: Vitor Reis
+* Matricula........: 201710793
+* Inicio...........: 10/08/2024
+* Ultima alteracao.: 01/12/2024
+* Nome.............: TCPClient
+* Funcao...........: Cliente TCP - Faz toda a comunicação necessaria
+*************************************************************** */
+
 package service;
 
 import java.io.IOException;
@@ -17,6 +26,13 @@ public class TCPClient extends Client {
     this.receive = receive;
   }
 
+  /*
+   * ***************************************************************
+   * Metodo: connect
+   * Funcao: Conecta ao servidor
+   * Parametros:
+   * Retorno:
+   */
   @Override
   public void connect() {
     System.out.println("(TCP) connecting to " + getHost() + ":" + getPort() + "...");
@@ -31,6 +47,13 @@ public class TCPClient extends Client {
     }
   }
 
+  /*
+   * ***************************************************************
+   * Metodo: close
+   * Funcao: Fecha a conexão com o servidor
+   * Parametros:
+   * Retorno:
+   */
   @Override
   public void close() {
     System.out.println("(TCP) Closing client...");
@@ -39,15 +62,31 @@ public class TCPClient extends Client {
       System.out.println("(TCP) Client closed");
     } catch (IOException e) {
       System.out.println("(TCP) Erro closing connection: " + e.getMessage());
-      e.printStackTrace();
     }
   }
 
+  /*
+   * ***************************************************************
+   * Metodo: isConnected
+   * Funcao: Verifica se há uma conexão ativa
+   * Parametros:
+   * Retorno: booleano se esta ou nao conectado
+   */
   @Override
   public boolean isConnected() {
+    if (this.socket == null) {
+      return false;
+    }
     return this.socket.isConnected();
   }
 
+  /*
+   * ***************************************************************
+   * Metodo: receive
+   * Funcao: Espera novas mensagens
+   * Parametros:
+   * Retorno:
+   */
   @Override
   public void receive() {
     new Thread(() -> {
@@ -59,13 +98,19 @@ public class TCPClient extends Client {
           System.out.println("(TCP) Receive server data: " + data);
           this.receive.receive(data);
         } catch (IOException e) {
-          System.out.println("(TCP) Error receiving the message.");
-          e.printStackTrace();
+          System.out.println("(TCP) Error receiving the message. " + e.getMessage());
         }
       } while (this.socket.isConnected() && !this.socket.isClosed());
     }).start();
   }
 
+  /*
+   * ***************************************************************
+   * Metodo: send
+   * Funcao: Envia mensagens
+   * Parametros: message - Mensagem a ser enviada
+   * Retorno:
+   */
   @Override
   public void send(String message) {
     System.out.println("(TCP) Sending: " + message);

@@ -1,3 +1,12 @@
+/* ***************************************************************
+* Autor............: Vitor Reis
+* Matricula........: 201710793
+* Inicio...........: 10/08/2024
+* Ultima alteracao.: 01/12/2024
+* Nome.............: HomeController
+* Funcao...........: Controla a tela Principal - HomeScreen
+*************************************************************** */
+
 package controller;
 
 import java.net.URL;
@@ -30,11 +39,39 @@ public class HomeController implements Initializable {
   @FXML
   ListView<Chat> listView;
 
+  /*
+   * ***************************************************************
+   * Metodo: handleButtonClick
+   * Funcao: Nevega até a tela de Novo Grupo
+   * Parametros: Event do botao
+   * Retorno: void
+   */
   @FXML
   private void handleButtonClick(ActionEvent event) {
     stageSingleton.goNewGroupScreen();
   }
 
+  /*
+   * ***************************************************************
+   * Metodo: handleGoOutServer
+   * Funcao: Fecha as conexões e retorna a tela de Configuração de Servidor
+   * Parametros: Event do botao
+   * Retorno: void
+   */
+  @FXML
+  private void handleGoOutServer(ActionEvent event) {
+    main.getTcpClient().close();
+    main.getUdpClient().close();
+    stageSingleton.goSelectionScreen();
+  }
+
+  /*
+   * ***************************************************************
+   * Metodo: renderGroups
+   * Funcao: Renderiza em tela os grupos / Chats
+   * Parametros: void
+   * Retorno: void
+   */
   public void renderGroups() {
 
     System.out.println("Chats: " + main.getChats());
@@ -64,6 +101,13 @@ public class HomeController implements Initializable {
     });
   }
 
+  /*
+   * ***************************************************************
+   * Metodo: createChat
+   * Funcao: Cria a renderização de um Chat
+   * Parametros: Chat a ser renderizado
+   * Retorno: void
+   */
   private HBox createChat(Chat chat) {
 
     HBox hbox = new HBox();
@@ -97,6 +141,13 @@ public class HomeController implements Initializable {
     return hbox;
   }
 
+  /*
+   * ***************************************************************
+   * Metodo: openGroup
+   * Funcao: Abre um grupo
+   * Parametros: evento do botao
+   * Retorno: void
+   */
   private void openGroup(MouseEvent event) {
     HBox chatBox = (HBox) event.getSource();
 

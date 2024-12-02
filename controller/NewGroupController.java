@@ -1,3 +1,12 @@
+/* ***************************************************************
+* Autor............: Vitor Reis
+* Matricula........: 201710793
+* Inicio...........: 10/08/2024
+* Ultima alteracao.: 01/12/2024
+* Nome.............: NewGroupController
+* Funcao...........: Controla a tela de Novo Grupo
+*************************************************************** */
+
 package controller;
 
 import java.net.URL;
@@ -18,6 +27,13 @@ public class NewGroupController implements Initializable {
   @FXML
   TextField inputGroupName;
 
+  /*
+   * ***************************************************************
+   * Metodo: handleEnterGroup
+   * Funcao: Entra em novo grupo
+   * Parametros: Event do botao
+   * Retorno: void
+   */
   @FXML
   private void handleEnterGroup(ActionEvent event) {
     String groupName = inputGroupName.getText();
@@ -34,7 +50,7 @@ public class NewGroupController implements Initializable {
 
     Main main = Main.getInstance();
     if (!main.isClientsReady()) {
-      main.createClients(null);
+      main.createClients();
     }
     try {
       main.getTcpClient().send("JOIN " + groupName);
@@ -54,6 +70,13 @@ public class NewGroupController implements Initializable {
     }
   }
 
+  /*
+   * ***************************************************************
+   * Metodo: handleGoBack
+   * Funcao: Retorna a tela Principal - HomeScreen
+   * Parametros: Event do botao
+   * Retorno: void
+   */
   @FXML
   private void handleGoBack(ActionEvent event) {
     StageSingleton stageSingleton = StageSingleton.getInstance();

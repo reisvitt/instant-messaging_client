@@ -5,20 +5,45 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="450.0" style="-fx-background-color: #FFF; -fx-border-radius: 40;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.HomeController">
    <top>
       <StackPane prefHeight="60.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="buttonEnterGroup" mnemonicParsing="false" onAction="#handleButtonClick" style="-fx-border-radius: 4; -fx-background-color: #f5f5f5; -fx-border-color: #ccc;" text="Entrar novo grupo">
-               <padding>
-                  <Insets bottom="8.0" left="16.0" right="16.0" top="8.0" />
-               </padding>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="buttonEnterGroup" mnemonicParsing="false" onAction="#handleButtonClick" style="-fx-border-radius: 4; -fx-background-color: #ddd; -fx-text-fill: #444;" text="Entrar novo grupo">
+                     <padding>
+                        <Insets bottom="8.0" left="16.0" right="16.0" top="8.0" />
+                     </padding>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Button>
+                  <Pane prefHeight="60.0" prefWidth="124.0" />
+                  <Button layoutX="162.0" layoutY="22.0" mnemonicParsing="false" onAction="#handleGoOutServer" style="-fx-border-radius: 4; -fx-background-color: #DD0000; -fx-text-fill: #eee;" text="Sair do Servidor">
+                     <padding>
+                        <Insets bottom="8.0" left="16.0" right="16.0" top="8.0" />
+                     </padding>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
          </children>
       </StackPane>
    </top>

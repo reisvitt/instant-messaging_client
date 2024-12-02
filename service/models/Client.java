@@ -1,3 +1,12 @@
+/* ***************************************************************
+* Autor............: Vitor Reis
+* Matricula........: 201710793
+* Inicio...........: 10/08/2024
+* Ultima alteracao.: 01/12/2024
+* Nome.............: Client
+* Funcao...........: Métodos e atributos comuns aos clientes de UDP e TCP
+*************************************************************** */
+
 package service.models;
 
 public abstract class Client {

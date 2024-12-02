@@ -1,3 +1,12 @@
+/* ***************************************************************
+* Autor............: Vitor Reis
+* Matricula........: 201710793
+* Inicio...........: 10/08/2024
+* Ultima alteracao.: 16/11/2024
+* Nome.............: UDPReceive
+* Funcao...........: Trata as mensagens UDP vindas do servidor
+*************************************************************** */
+
 package data;
 
 import javafx.application.Platform;
